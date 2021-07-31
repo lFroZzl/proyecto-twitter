@@ -1,15 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong><%= @tweet.user.username %></strong>
-  <i><%= @tweet.content %></i>
-</p>
-
-<h4>Likes (<%= @tweet.likes.count %>)</h4>
-
-<% @tweet.liking_users.each do |user| %>
- <%= image_tag(user.avatar, class: "avatar-in-tweet rounded") %>
-<% end %>
-
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="card"> 
+    <div class="card text-dark bg-white mb-3" style="max-width: 100%;">
+      <div class="card-header"><strong><%= image_tag(@tweet.user.avatar, class: "avatar-in-tweet rounded") %>@<%= @tweet.user.username %></strong></div>
+        <div class="card-body">
+          <p class="card-text"><i><%= @tweet.content %></i></p>
+        </div>
+        <div class="card-footer bg-white border-1">
+          <p>Likes (<%= @tweet.likes.count %>)
+          <% @tweet.liking_users.each do |user| %>
+            <%= image_tag(user.avatar, class: "avatar-in-like rounded", OnMouseover: "kek") %>
+          <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 <br />
-<%= link_to 'Back', root_path, class: "text-muted" %>
+<%= link_to 'Back', root_path, class: "text-white pl-3" %>
+</div>

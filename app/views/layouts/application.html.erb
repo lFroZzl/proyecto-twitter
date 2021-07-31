@@ -15,29 +15,33 @@
   </head>
 
   <body>
+    <div class="bg-dark">
 
-    <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' %>
 
-    <% if alert || notice %>
-      <div class="alert alert-<%= alert ? 'danger' : 'success' %> text-center" role="alert">
-        <%= alert %>
-        <%= notice %>
+      <% if alert || notice %>
+        <div class="alert alert-<%= alert ? 'danger' : 'success' %> text-center" role="alert">
+          <%= alert %>
+          <%= notice %>
+        </div>
+      <% end %>
+      
+
+      <div class="container pb-5">
+
+        <%= yield %>
+
       </div>
-    <% end %>
-    
 
-    <div class="container">
+      
+      <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
+      
+   
 
-      <%= yield %>
-
-    </div>
-    
-    <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
-    <div class="height">
-        <h3 class="text-center scroll">Scroll down </h3>
+      <%= render 'shared/footer' %>  
     </div>
 
-    <%= render 'shared/footer' %>  
+
 
 
 
