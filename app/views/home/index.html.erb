@@ -10,6 +10,6 @@
         <%= render 'tweets/single_tweet', tweet: tweet %>
     <% end %>
     <hr/>
-    <%= paginate @tweets %>
+    <%= paginate @tweets, window: 1 %>
     <%= link_to_next_page @tweets, 'Mostrar mas' %>
 </div>
