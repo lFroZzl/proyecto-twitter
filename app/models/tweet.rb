@@ -5,7 +5,7 @@ class Tweet < ApplicationRecord
 
   validates :content, presence: :true
 
-  paginates_per 3
+  paginates_per 10
 
   #def like_icon
   #  if self.is_liked?(current_user)
