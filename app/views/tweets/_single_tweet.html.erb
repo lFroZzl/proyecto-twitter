@@ -6,6 +6,15 @@
             </div>
             <%= image_tag (tweet.user.avatar), class: "avatar-in-tweet" %>
             @<%= tweet.user.username %><br />
+            <div>
+            <% if user_signed_in? && current_user != tweet.user %>
+                <% if current_user.is_following?(tweet.user_id)%>
+                    <%= link_to 'Dejar de ser amigos', users_follow_path(tweet.user_id), method: :post %>
+                <% else %>
+                    <%= link_to 'Agregar a amigos', users_follow_path(tweet.user_id), method: :post %>
+                <% end %>
+            <% end %>
+            </div>
         </div>
 
         <div class="card-body">

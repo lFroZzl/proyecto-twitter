@@ -7,12 +7,17 @@ class Tweet < ApplicationRecord
 
   paginates_per 10
 
+  scope :tweets_for_me, ->(user) { where(user_id: user.arr_friends_id) }
+
   #def like_icon
   #  if self.is_liked?(current_user)
   #    'heart'
   #  else
   #    'heart-broken'
   #end
+
+ 
+
   def retweet_color
     if self.count_rt > 0 ? 'primary' : 'muted'
     end

@@ -6,20 +6,28 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-      <% if user_signed_in?%>
         <li class="nav-item">
-          <a class="nav-link text-white">@<%= current_user.username%></a>
+          <%= link_to 'Explorar', all_tweets_path, class: 'nav-link text-white' %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <%= link_to 'Registrarse', new_user_registration_path, class: 'nav-link text-white' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Log in', new_user_session_path, class: 'nav-link text-white' %>
-        </li>
+        <% if user_signed_in?%>
+          <% if current_user.admin %>
+            <li class="nav-item">
+              <%= link_to 'Admin', admin_root_path, class: 'nav-link text-white' %>
+            </li>
+          <% end %>
+          <li class="nav-item">
+            <a class="nav-link text-white">@<%= current_user.username%></a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Cerrar sesion', destroy_user_session_path, class: 'nav-link text-white' %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to 'Registrarse', new_user_registration_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Log in', new_user_session_path, class: 'nav-link text-white' %>
+          </li>
         <% end %>
       </ul>
     </div>
