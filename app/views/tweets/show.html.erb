@@ -4,7 +4,7 @@
     <div class="card text-dark bg-white mb-3" style="max-width: 100%;">
       <div class="card-header"><strong><%= image_tag(@tweet.user.avatar, class: "avatar-in-tweet rounded") %>@<%= @tweet.user.username %></strong></div>
         <div class="card-body">
-          <p class="card-text"><i><%= @tweet.content %></i></p>
+          <p class="card-text"><i><%= @tweet.content.html_safe %></i></p>
         </div>
         <div class="card-footer bg-white border-1">
           <p>Likes (<%= @tweet.likes.count %>)
