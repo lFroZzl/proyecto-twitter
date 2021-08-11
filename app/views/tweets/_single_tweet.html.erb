@@ -5,17 +5,17 @@
                 <%= link_to "<i class='fa fa-calendar'></i>".html_safe+time_ago_in_words(tweet.created_at), tweet %>
             </div>
             <div class="flex-row">
-            <%= image_tag (tweet.user.avatar), class: "avatar-in-tweet" %>
-            <b class="new-text">@<%= tweet.user.username %></b><br />
+                <%= image_tag (tweet.user.avatar), class: "avatar-in-tweet" %>
+                <b class="new-text">@<%= tweet.user.username %></b><br />
             </div>
             <div>
-            <% if user_signed_in? && current_user != tweet.user %>
-                <% if current_user.is_following?(tweet.user_id)%>
-                    <%= link_to 'Dejar de ser amigos', users_follow_path(tweet.user_id), method: :post %>
-                <% else %>
-                    <%= link_to 'Agregar a amigos', users_follow_path(tweet.user_id), method: :post %>
+                <% if user_signed_in? && current_user != tweet.user %>
+                    <% if current_user.is_following?(tweet.user_id)%>
+                        <%= link_to '<i class="fas fa-handshake-slash text-danger"></i>'.html_safe, users_follow_path(tweet.user_id), method: :post %>
+                    <% else %>
+                        <%= link_to '<i class="fas fa-handshake"></i>'.html_safe, users_follow_path(tweet.user_id), method: :post %>
+                    <% end %>
                 <% end %>
-            <% end %>
             </div>
         </div>
 
