@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="form-group mt-3">
-    <b class="text-primary">@<%= current_user.username %>:</b> <br />
-    <%= form.text_area :content, placeholder: 'post a tweet...', class: 'form-control text-gray' %>
+    <b class="new-text text-fix shadow-text">@<%= current_user.username %>:</b> <br />
+    <%= form.text_area :content, placeholder: 'Escribe un tweet...', class: 'form-control text-gray' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions new-text ">
+    <%= form.submit 'Crear', class: 'ml-2 btn btn-info text-white float-left' %>
   </div>
 <% end %>

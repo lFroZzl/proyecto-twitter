@@ -1,11 +1,13 @@
-<div class="card col-12 px-0 border-0 my-1">
+<div class="card col-12 px-0 border-1 my-1 border-color">
     <div class="card text-dark bg-white">
-        <div class="card-header">
+        <div class="card-header card-color">
             <div>
                 <%= link_to "<i class='fa fa-calendar'></i>".html_safe+time_ago_in_words(tweet.created_at), tweet %>
             </div>
+            <div class="flex-row">
             <%= image_tag (tweet.user.avatar), class: "avatar-in-tweet" %>
-            @<%= tweet.user.username %><br />
+            <b class="new-text">@<%= tweet.user.username %></b><br />
+            </div>
             <div>
             <% if user_signed_in? && current_user != tweet.user %>
                 <% if current_user.is_following?(tweet.user_id)%>
@@ -17,11 +19,11 @@
             </div>
         </div>
 
-        <div class="card-body">
+        <div class="card-body content-color">
             <p class="card-text"><i><%= tweet.content.html_safe %></i></p>
         </div>
 
-        <div class="card-footer bg-white border-1">
+        <div class="card-footer border-1 card-color">
             <div class="d-inline">
                 <% if tweet.is_liked?(current_user) %>
                     <%= link_to "<i class='fas fa-heart text-danger'></i>".html_safe, tweet_likes_path(tweet), method: :post %>

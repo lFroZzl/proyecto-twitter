@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background-image: url("main-bg.jpg");
+    background-size: 100%;
+}
+ 
 
 ul {
   list-style-type: none;
@@ -27,7 +32,7 @@ footer {
 
 .scroll {
     color: #fff;
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 #toTopBtn {
@@ -71,4 +76,89 @@ footer {
     background-color: hsla(var(--cd-color-3-h), var(--cd-color-3-s), var(--cd-color-3-l), 0.8)
 }
 
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: #222222;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
 
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
+
+
+
+.nav-bg {
+    background: url(nav-bg.png);
+   
+}
+
+.nav-logo{
+    max-height: 100px;
+    max-width: 100px;
+    padding-bottom: 20px;
+  
+}
+
+.content-color {
+    background-color: #E5E5E5;
+}
+.card-color {
+    background-color: #CCCCCC;
+}
+
+.border-color {
+    border-color: #CCCCCC;
+}
+
+.text-fix{
+    color: #fff;
+    font-size: 40px;
+}
+
+.new-text {
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+}
+
+.shadow-text {
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.text-devise{   
+    font-size:20px;
+    text-shadow: 1px 0 0 #54C8FB, -1px 0 0 #54C8FB, 0 1px 0 #54C8FB, 0 -1px 0 #54C8FB, 1px 1px #54C8FB, -1px -1px 0 #54C8FB, 1px -1px 0 b#54C8FB, -1px 1px 0 #54C8FB;
+}
+
+.text-pag{
+    color: red;
+}

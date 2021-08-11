@@ -1,32 +1,36 @@
-<nav class="col-12 navbar navbar-expand-lg navbar-dark bg-secondary">
+<nav class="col-12 navbar navbar-expand-lg navbar-dark nav-bg new-text">
   <div class="container">
-    <%= link_to 'Twitter', root_path, class: 'navbar-brand' %>
+    <%= link_to(image_tag("navlogo.png", :class=>"navbar-brand nav-logo"), root_path) %>
+    <h4 class="text-white">Twitter</h4>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to 'Explorar', all_tweets_path, class: 'nav-link text-white' %>
-        </li>
         <% if user_signed_in?%>
           <% if current_user.admin %>
             <li class="nav-item">
-              <%= link_to 'Admin', admin_root_path, class: 'nav-link text-white' %>
+              <%= link_to 'Administrador', admin_root_path, class: 'nav-link text-white' %>
             </li>
           <% end %>
           <li class="nav-item">
             <a class="nav-link text-white">@<%= current_user.username%></a>
           </li>
           <li class="nav-item">
+          <%= link_to 'Explorar', all_tweets_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
             <%= link_to 'Cerrar sesion', destroy_user_session_path, class: 'nav-link text-white' %>
           </li>
           <% else %>
           <li class="nav-item">
+          <%= link_to 'Explorar', all_tweets_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
             <%= link_to 'Registrarse', new_user_registration_path, class: 'nav-link text-white' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Log in', new_user_session_path, class: 'nav-link text-white' %>
+            <%= link_to 'Ingresar', new_user_session_path, class: 'nav-link text-white' %>
           </li>
         <% end %>
       </ul>

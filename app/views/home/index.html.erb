@@ -4,9 +4,9 @@
     <% end %>
     <div class="w-100 mt-2">
         <%= form_tag(root_path, method: :get) do %>
-            <div class="form-group">
-            <%= link_to "limpiar", root_path, class: :'btn btn-info float-right ml-2 text-white' %>
-                <%= submit_tag("buscar", class: :'ml-2 btn btn-primary text-white float-right') %>
+            <div class="form-group new-text">
+                <%= link_to "limpiar", root_path, class: :'btn btn-secondary float-right ml-2 text-white mb-2' %>
+                <%= submit_tag("buscar", class: :'ml-2 btn btn-info text-white float-right') %>
                 <%= text_field_tag(:search, params[:search], class: :'w-50 float-right form-control d-inline') %>
             </div>
         <% end %>
@@ -18,6 +18,8 @@
         <%= render 'tweets/single_tweet', tweet: tweet %>
     <% end %>
     <hr/>
-    <%= paginate @tweets, window: 1 %>
-    <%= link_to_next_page @tweets, 'Mostrar mas' %>
+</div>
+
+<div class="d-flex justify-content-around text-pag">
+    <%= paginate @tweets, window: 2 %>
 </div>
