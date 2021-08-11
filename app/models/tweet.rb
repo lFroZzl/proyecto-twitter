@@ -1,6 +1,7 @@
 #include ActionView::Helpers::UrlHelper
 
 class Tweet < ApplicationRecord
+  
 
   before_save :add_hashtags
 
